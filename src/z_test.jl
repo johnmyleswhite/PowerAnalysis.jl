@@ -1,10 +1,10 @@
-@doc """
+"""
 Determine the null and alternate hypotheses under z-tests given:
 
 * `ns`: Per-group sample size(s)
 * `δ`: Deviation from the null
 * `σs`: Per-group standard deviations
-""" ->
+"""
 function hypotheses(::Type{OneSampleZTest}, n::Real, δ::Real, σ::Real)
     se = sqrt(1 / n) * σ
     null = Normal(0, se)
@@ -12,13 +12,13 @@ function hypotheses(::Type{OneSampleZTest}, n::Real, δ::Real, σ::Real)
     return null, alt
 end
 
-@doc """
+"""
 Determine the null and alternate hypotheses under t-tests given:
 
 * `ns`: Per-group sample size(s)
 * `δ`: Deviation from the null
 * `σs`: Per-group standard deviations
-""" ->
+"""
 function hypotheses(::Type{EqualVarianceZTest}, n::Real, δ::Real, σ::Real)
     se = sqrt(2 / n) * σ
     null = Normal(0, se)
