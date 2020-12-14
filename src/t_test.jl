@@ -47,4 +47,4 @@ end
 # @doc """
 # Determine the values of t that lead to overestimates of the magnitude of δ.
 # """ ->
-thresholds(alt::NoncentralT) = -alt.ncp, alt.ncp
+thresholds(alt::NoncentralT) = -alt.λ, alt.λ

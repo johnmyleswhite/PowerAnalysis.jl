@@ -2,6 +2,7 @@ module PowerAnalysis
     using Distributions
     using HypothesisTests
     using Roots
+    using QuadGK
 
     # TODO: Move z-tests into HypothesisTests
     abstract type OneSampleZTest end

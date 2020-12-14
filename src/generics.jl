@@ -211,7 +211,7 @@ function exaggeration_factor(
         p_significant = ccdf(alt, c_r)
         f0(t) = (t / t_r) * (pdf(alt, t) / p_significant)
         i_r = cquantile(alt, bounds)
-        e_r = quadgk(f0, c_r, i_r, reltol = tol)[1]
+        e_r = gauss(f0, c_r, i_r, rtol = tol)[1]
         return e_r
     else
         c_l, c_r = quantile(null, α / 2), cquantile(null, α / 2)
@@ -220,8 +220,8 @@ function exaggeration_factor(
         f1(t) = (t / t_l) * (pdf(alt, t) / p_significant)
         f2(t) = (t / t_r) * (pdf(alt, t) / p_significant)
         i_l, i_r = quantile(alt, bounds), cquantile(alt, bounds)
-        e_l = quadgk(f1, i_l, c_l, reltol = tol)[1]
-        e_r = quadgk(f2, c_r, i_r, reltol = tol)[1]
+        e_l = gauss(f1, i_l, c_l, rtol = tol)[1]
+        e_r = gauss(f2, c_r, i_r, rtol = tol)[1]
         return e_l + e_r
     end
 end
