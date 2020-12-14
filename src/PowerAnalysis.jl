@@ -4,13 +4,6 @@ module PowerAnalysis
     using Roots
     using QuadGK
 
-    # TODO: Move z-tests into HypothesisTests
-    abstract type OneSampleZTest end
-    abstract type EqualVarianceZTest end
-    
-    export OneSampleZTest
-           EqualVarianceZTest
-
     export
         power,
         effect_size,

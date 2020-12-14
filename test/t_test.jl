@@ -1,7 +1,4 @@
-module TestTTest
-    using Base.Test
-    using PowerAnalysis
-    using HypothesisTests
+@testset "TestTTest" begin
 
     # OneSampleTTest tests
     # Loop over n, d, p, s and one_sided
