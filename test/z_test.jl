@@ -1,7 +1,4 @@
-module TestZTest
-    using Base.Test
-    using PowerAnalysis
-    using HypothesisTests
+@testset "TestZTest" begin
 
     # OneSampleZTest tests
     # Loop over n, d, p, s, two_sided values

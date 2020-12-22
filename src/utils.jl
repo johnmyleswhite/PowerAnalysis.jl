@@ -1,4 +1,4 @@
-@doc """
+"""
 Check that user-facing function arguments satisfy assumptions made in code:
 
 * Per-group sample size is at least 2
@@ -6,11 +6,11 @@ Check that user-facing function arguments satisfy assumptions made in code:
 * The variance in each group is strictly positive
 * The power is between 0 and 1
 * The significance level is between 0 and 1
-""" ->
+"""
 function check_args(
-    ns::Union(Real, Tuple),
+    ns::Union{Real, Tuple},
     δ::Real,
-    σs::Union(Real, Tuple),
+    σs::Union{Real, Tuple},
     p::Real,
     α::Real,
 )

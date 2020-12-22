@@ -1,13 +1,8 @@
 module PowerAnalysis
-    using Docile
-    @docstrings
-
-    using Distributions, HypothesisTests, Roots
-
-    # TODO: Move z-tests into HypothesisTests
-    abstract OneSampleZTest
-    abstract EqualVarianceZTest
-    export OneSampleZTest, EqualVarianceZTest
+    using Distributions
+    using HypothesisTests
+    using Roots
+    using QuadGK
 
     export
         power,
